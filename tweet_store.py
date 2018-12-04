@@ -1,5 +1,6 @@
 import json
 import redis
+import os
 from tweet import Tweet
 
 class TweetStore:
@@ -27,7 +28,7 @@ class TweetStore:
         #     port=self.redis_port,
         #     password=self.redis_password
         # )
-
+        self.redis = None
         redis_url = os.getenv(self.REDIS_URL, 'redis://localhost:6379')
         self.redis = redis.from_url(redis_url)
 
