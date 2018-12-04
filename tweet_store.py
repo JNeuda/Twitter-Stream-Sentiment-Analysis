@@ -28,21 +28,8 @@ class TweetStore:
         #     password=self.redis_password
         # )
 
-        """Connect to the redis server(s)."""
-        self.redis = None
-        try:
-            import redis
-            #TODO: ALL INPUT IS EVIL
-            #regex check these variables
-            redis_url = os.getenv(self.REDIS_URL, 'redis://localhost')
-            self.redis = redis.from_url(redis_url)
-        except ImportError:
-            logging.error("Could not import module 'redis' - redis caching is disabled. Please install the module and try again.")
-            self.redis = None
-        except Exception, e:
-            # unfortunately, the redis library doesn't give us any details if the connection didn't work.
-            logging.error("ERROR starting redis: '%s'. Is your redis URL '%s' correct? Redis caching is disabled." % (e, self.REDIS_URL))
-            self.redis = None
+        redis_url = os.getenv(self.REDIS_URL, 'redis://localhost:6379')
+        self.redis = redis.from_url(redis_url)
 
         self.trim_count = 0
 
