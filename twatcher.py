@@ -6,7 +6,6 @@ import pandas as pd
 app = Flask(__name__)
 store = TweetStore()
 
-
 @app.route('/')
 def index():
     tweets = store.tweets()
