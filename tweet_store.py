@@ -6,12 +6,12 @@ from tweet import Tweet
 class TweetStore:
 
     # Redis Configuration
-    redis_host = "localhost"
-    redis_port = 6379
-    redis_password = ""
+    # redis_host = "localhost"
+    # redis_port = 6379
+    # redis_password = ""
 
-    #redis_url = os.getenv('REDISTOGO_URL', 'redis://localhost:6379')
-    #redis = redis.from_url(redis_url)
+    # redis_url = os.getenv('REDISTOGO_URL', 'redis://localhost:6379')
+    # redis = redis.from_url(redis_url)
 
     # Tweet Configuration
     redis_key = 'tweets'
@@ -23,11 +23,13 @@ class TweetStore:
 
     # Create db connection with Redis Configurations
     def __init__(self):
-        self.db = r = redis.Redis(
-            host=self.redis_host,
-            port=self.redis_port,
-            password=self.redis_password
-        )
+        self.db = r = redis.from_url(os.environ.get("REDIS_URL", 'redis://localhost:6379'))
+        
+        #     redis.Redis(
+        #     host=self.redis_host,
+        #     port=self.redis_port,
+        #     password=self.redis_password
+        # )
 
         self.trim_count = 0
 
