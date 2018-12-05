@@ -22,7 +22,7 @@
       <div class="row mb-5">
         <div class="col text-center">
           <h1 class="mb-3">
-            DTC-Twitter Filter
+            Twittter Filter Stream with Sentiment Scores
           </h1>
           <h4 class="mb-2">
             <small class="text-muted">
@@ -87,7 +87,15 @@
                 Plotly.newPlot("plot", data, layout);
                             })
         </script>
-      
+
+        <br>
+
+        <div class="text-center mb-4">
+          <h4 class="mb-2">
+            <small class="text-muted">
+              Border color determined by polarity score of tweet. Positive:Green, Negative:Red, Neutral:Gray
+            </small>
+        </div>
 
       {% for tweet in tweets %}
         <div class="row my-4">
