@@ -11,7 +11,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
-    <title>DTC-Twitter Filter</title>
+    <title>Twitter Filter Stream </title>
 
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
@@ -26,7 +26,7 @@
           </h1>
           <h4 class="mb-2">
             <small class="text-muted">
-              Monitoring BBC, CBS, CNN, FoxNews, and nytimes tweets. 
+              Monitoring twitter tags: @BBC, @CBS, @CNN, @FoxNews, and @nytimes
             </small>
           </h4>
         </div>
@@ -67,16 +67,20 @@
                 var layout = {
                   showlegend: true,
                   title: "Sentiment Analysis of Media Tweets",
+                  font: {
+                    family: 'Comic Sans MS',
+                    size: 18
+                  },
                   xaxis: { title: "Tweets Ago"},
                   yaxis: { title: "Tweet Polarity",
                            range: [-1, 1]},
-                           annotations: [{
-    x: 6.75,
-    y: 7.25,
-    text: 'Vertical',
-    textangle: '-55',
-    showarrow: false
-  }]
+                  annotations: [{
+                      x: 6.75,
+                      y: 7.25,
+                      text: 'Vertical',
+                      textangle: '-55',
+                      showarrow: false
+                    }]
                 };
 
                 // Plot the chart to a div tag with id "plot"
