@@ -9,4 +9,4 @@ Please see live website: https://twitterstreamfilter.herokuapp.com/
 * Python libraries used: Tweepy, vaderSentiment, and Flask
 * Deployed online using Heroku: https://twitterstreamfilter.herokuapp.com/
 
-![alt text](https://github.com/Twitter-Stream-Sentiment-Analysis/twitterfilter.png)
+![alt text](https://github.com/JNeuda/Twitter-Stream-Sentiment-Analysis/blob/master/twitterfilter.png)
